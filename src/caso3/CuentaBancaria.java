@@ -11,4 +11,14 @@ public class CuentaBancaria {
         this.saldo = saldoInicial;
     }
     
+    // Método para depositar dinero
+    public void depositar(double monto) {
+        if (monto > 0) {
+            saldo += monto;
+            System.out.println("Depósito exitoso. Saldo actual: " + saldo);
+        } else {
+            System.out.println("El monto a depositar debe ser positivo.");
+        }
+    }
+    
 }
