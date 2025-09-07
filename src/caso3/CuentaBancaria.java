@@ -21,4 +21,18 @@ public class CuentaBancaria {
         }
     }
     
+    // Método para retirar dinero con validación
+    public void retirar(double monto) {
+        if (monto > 0) {
+            if (monto <= saldo) {
+                saldo -= monto;
+                System.out.println("Retiro exitoso. Saldo actual: " + saldo);
+            } else {
+                System.out.println("Fondos insuficientes. Saldo disponible: " + saldo);
+            }
+        } else {
+            System.out.println("El monto a retirar debe ser positivo.");
+        }
+    }
+    
 }
