@@ -33,8 +33,9 @@ public class Pregunta5 {
             // Captura la excepción personalizada si el número es negativo
             System.err.println("Error: " + e.getMessage());
         } finally {
-            // Cierra el scanner para liberar recursos
+            // Cierra el scanner para liberar los recursos
             scanner.close();
         }
+        
     }
 }
