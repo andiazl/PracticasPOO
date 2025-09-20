@@ -36,6 +36,5 @@ public class Pregunta5 {
             // Cierra el scanner para liberar los recursos
             scanner.close();
         }
-        
     }
 }

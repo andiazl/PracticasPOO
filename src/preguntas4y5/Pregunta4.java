@@ -81,7 +81,6 @@ public class Pregunta4 {
         }
 
         try {
-        	
             miInventario.agregarProducto("Monitor", 300.0, -10);
         } catch (IllegalArgumentException e) {
             System.err.println("Error: " + e.getMessage());
