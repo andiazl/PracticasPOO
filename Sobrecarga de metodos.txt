@@ -1,0 +1,52 @@
+package calculadora;
+
+//Sobrecarga de metodos
+public class Main {
+    public static void main(String[] args) {
+    	 // Se_crea un_objeto de_la clase_Calculadora_para poder_usar sus_métodos.
+        Calculadora calc = new Calculadora();
+
+        // Aquí se llama al método sumar que recibe dos enteros.
+        // El compilador detecta que los parámetros son (int, int)
+        // y ejecuta el método correspondiente.
+        int sumaEnterosDos = calc.sumar(5, 10);                     // Dos_enteros
+        
+
+        // Aquí se llama al método sumar que recibe tres enteros.
+        // Gracias a la sobrecarga, se puede usar el mismo nombre "sumar"
+        // aunque el método reciba distintos parámetros.
+        int sumaEnterosTres = calc.sumar(3, 7, 2);                  // Tres_enteros
+        
+        // En este caso, como los parámetros son de tipo double,
+        // el compilador selecciona automáticamente el método que trabaja con (double, double).
+        double sumaDecimales = calc.sumar(4.5, 6.3);                // Dos_decimales
+
+        // Finalmente se muestran los resultados en consola.
+        // Esto permite comprobar que cada versión de "sumar" fue invocada correctamente.
+        System.out.println("Suma de dos enteros (5 + 10): " + sumaEnterosDos);					
+        System.out.println("Suma de tres enteros (3 + 7 + 2): " + sumaEnterosTres);
+        System.out.println("Suma de dos decimales (4.5 + 6.3): " + sumaDecimales);
+    }
+}
+
+// Clase_Calculadora con_sobrecarga de_métodos
+class Calculadora {
+
+	 // Primer método sumar: recibe dos enteros.
+    // Este se usará cuando en la llamada se pasen exactamente 2 números enteros.
+    public int sumar(int a, int b) {
+        return a + b;
+    }
+
+    // Segundo método sumar: recibe tres enteros.
+    // Este se usará cuando en la llamada se pasen exactamente 3 números enteros.
+    public int sumar(int a, int b, int c) {
+        return a + b + c;
+    }
+
+ // Tercer método sumar: recibe dos decimales (double).
+    // Se activa cuando en la llamada se pasen dos valores con punto decimal.
+    public double sumar(double a, double b) {
+        return a + b;
+	}
+}

@@ -1,0 +1,39 @@
+package calculadora;
+
+//Colecciones-ArraysList
+import java.util.ArrayList;
+
+public class Colleciones_ArraysList {
+
+	public static void main(String[] args) {
+			
+		// Se crea un ArrayList de tipo String para almacenar los nombres de los estudiantes.
+        // ArrayList permite manejar una lista dinámica que puede crecer o reducirse en tiempo de ejecución.
+        ArrayList<String> estudiantes = new ArrayList<>();
+
+        // Se agregan al menos 5 nombres a la lista utilizando el método add().
+        estudiantes.add("Ana");
+        estudiantes.add("Luis");
+        estudiantes.add("María");
+        estudiantes.add("Carlos");
+        estudiantes.add("Elena");
+
+        // Se muestra la lista completa de estudiantes.
+        System.out.println("Lista completa de estudiantes:");
+        System.out.println(estudiantes);
+
+        // Se elimina el tercer nombre ingresado.
+        // Recordar que los índices en Java empiezan desde 0:
+        // 0 = Ana, 1 = Luis, 2 = María, 3 = Carlos, 4 = Elena
+        // Por tanto, el tercer nombre es el que está en la posición índice 2.
+        estudiantes.remove(2);
+
+        // Se recorre nuevamente la lista con un bucle for-each para mostrar los nombres restantes.
+        System.out.println("\nLista de estudiantes después de eliminar el tercer nombre:" + " María");
+        for (String nombre : estudiantes) {
+            System.out.println(nombre);
+		}
+
+	}
+
+}

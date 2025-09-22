@@ -1,0 +1,42 @@
+package calculadora;
+
+//Manejo de errores
+import java.util.Scanner;
+
+public class Manejo_errores {
+
+	public static void main(String[] args) {
+		
+		// Crear objeto Scanner para leer desde teclado
+        Scanner sc = new Scanner(System.in);
+
+        try {
+        	// Se solicita al usuario que ingrese el primer número entero.
+            // El método nextInt() lee un valor entero desde el teclado.
+            System.out.print("Ingrese el primer número entero: ");
+            int num1 = sc.nextInt();
+            
+            // Se solicita el segundo número entero de la misma forma.
+            System.out.print("Ingrese el segundo número entero: ");
+            int num2 = sc.nextInt();
+
+            // Aquí se intenta realizar la división.
+            // Si num2 es distinto de cero, la operación se ejecuta sin problemas.
+            // Pero si num2 es igual a cero, Java lanzará automáticamente una excepción ArithmeticException.
+            int resultado = num1 / num2;
+
+            // Si la división se realizó correctamente, se muestra el resultado en consola.
+            System.out.println("El resultado de la división es: " + resultado);
+
+            // Este bloque se ejecuta únicamente si ocurre una división entre cero.           
+        } catch (ArithmeticException e) {
+        	// En ese caso, se muestra un mensaje  para el usuario en lugar de detener bruscamente el programa.     
+            System.out.println("Error: división entre cero no permitida");
+        }
+
+        // Finalmente, cerramos el Scanner como buena practica, ya que libera el recurso de entrada.
+        sc.close();
+
+	}
+
+}
